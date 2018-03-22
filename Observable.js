@@ -1,7 +1,7 @@
 function Observable(subscribe) {
     this.subscribe = function (observer) {
         ['next', 'error', 'complete']
-        .filter(key => !observer[key])
+            .filter(key => !observer[key])
             .forEach(key => observer[key] = () => {})
         subscribe(observer)
     }
