@@ -77,7 +77,7 @@ createOperator('do', function (observer, cb) {
 })
 
 Observable.create(observer => {
-        new Array(20).fill(undefined).map((v, i) => i).forEach(observer.next)
+        new Array(20).fill(undefined).map((_, i) => i).forEach(observer.next)
     })
     .filter(x => x % 3 === 0)
     .do(console.log)
