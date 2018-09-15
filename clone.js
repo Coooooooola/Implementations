@@ -9,11 +9,11 @@ function clone(target) {
 	map.set(null, null)
 
 	function _clone(target, map) {
-		if (map.has(target)) {
-			return map.get(target)
-		}
 		if (typeof target !== 'object' && typeof target !== 'function') {
 			return target
+		}
+		if (map.has(target)) {
+			return map.get(target)
 		}
 		const ret = Array.isArray(target)
 			? []
