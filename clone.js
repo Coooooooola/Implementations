@@ -6,10 +6,9 @@ function clone(target) {
 	map.set(objPrototype, objPrototype)
 	map.set(arrPrototype, arrPrototype)
 	map.set(funcPrototype, funcPrototype)
-	map.set(null, null)
 
 	function _clone(target, map) {
-		if (typeof target !== 'object' && typeof target !== 'function') {
+		if (target == null || typeof target !== 'object' && typeof target !== 'function') {
 			return target
 		}
 		if (map.has(target)) {
